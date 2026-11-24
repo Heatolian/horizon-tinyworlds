@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 2,
+  "id": "bots-workflow",
+  "name": "Multiplayer bots",
+  "description": "Fill empty player slots with bots, and tell them what to do in your game.",
+  "type": "tool",
+  "presentation": {
+    "shape": "threeColumn",
+    "slots": [
+      {
+        "widget": "aiChat"
+      },
+      {
+        "widget": "runtimePreview"
+      },
+      {
+        "widget": "multiplayerBots"
+      }
+    ]
+  }
+}

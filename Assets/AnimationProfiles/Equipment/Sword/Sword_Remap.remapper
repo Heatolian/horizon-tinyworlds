@@ -1,0 +1,29 @@
+{
+    "aliasAnimationMappings": [
+        {
+            "name": "idleItem",
+            "animName": "",
+            "targetSpecType": "alias",
+            "alias": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "14052883624592269034",
+                "targetId": "3829385675"
+            }
+        },
+        {
+            "name": "useItem",
+            "animName": "",
+            "targetSpecType": "alias",
+            "alias": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "8700007667904477114",
+                "targetId": "3829385675"
+            }
+        }
+    ],
+    "blendAnimationMappings": [],
+    "randomAnimationMappings": [],
+    "sequenceAnimationMappings": [],
+    "name": "SwordPage",
+    "version": 1
+}

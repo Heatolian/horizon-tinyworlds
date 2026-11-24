@@ -1,0 +1,8 @@
+CSN2
+V6
+E 8c8519d4-8f5a-4b76-9dd9-18d35ca8cc83|MolotovVisual
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+E dc5319b2-db06-463f-a0bb-637ca6a9cb5c|Visual|8c8519d4-8f5a-4b76-9dd9-18d35ca8cc83
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C Msh|12|{"shadowParams":{"class":"horizon::platform_api::ShadowParams","data":{"castsShadows":true}}}
+C Mtl|-|{"materials":[]}

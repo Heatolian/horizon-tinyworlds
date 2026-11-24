@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 2,
+  "id": "camera-workflow",
+  "name": "Camera editor",
+  "description": "Tune the in-world camera framing, motion, and transitions for this project.",
+  "type": "tool",
+  "inputs": [],
+  "hooks": [],
+  "datasources": [
+    {
+      "filter": [
+        [
+          {
+            "componentClassName": "horizon::platform_api::CameraPlatformComponent",
+            "kind": "COMPONENT"
+          }
+        ]
+      ],
+      "id": "cameras",
+      "type": "ENTITY"
+    },
+    {
+      "filter": [
+        [
+          {
+            "componentClassName": "horizon::platform_api::CameraPlatformComponent",
+            "kind": "COMPONENT"
+          }
+        ]
+      ],
+      "id": "scenes",
+      "type": "TEMPLATE"
+    }
+  ],
+  "presentation": {
+    "shape": "preview",
+    "previewMode": "preview",
+    "slots": [
+      {
+        "widget": "aiChat"
+      },
+      {
+        "widget": "subjectOutliner"
+      },
+      {
+        "widget": "runtimePreview"
+      },
+      {
+        "datasources": [
+          "cameras",
+          "scenes"
+        ],
+        "widget": "propertyPanel"
+      }
+    ]
+  }
+}

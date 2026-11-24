@@ -1,0 +1,39 @@
+{
+    "aliasAnimationMappings": [
+        {
+            "name": "idleItem",
+            "animName": "",
+            "targetSpecType": "alias",
+            "alias": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "4359996716012570088",
+                "targetId": "3829385675"
+            }
+        },
+        {
+            "name": "useItem",
+            "animName": "",
+            "targetSpecType": "alias",
+            "alias": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "16284627704547898489",
+                "targetId": "3829385675"
+            }
+        },
+        {
+            "name": "reloadItem",
+            "animName": "",
+            "targetSpecType": "alias",
+            "alias": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "9100799985825678215",
+                "targetId": "3829385675"
+            }
+        }
+    ],
+    "blendAnimationMappings": [],
+    "randomAnimationMappings": [],
+    "sequenceAnimationMappings": [],
+    "name": "PistolPage",
+    "version": 1
+}

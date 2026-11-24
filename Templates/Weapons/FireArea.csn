@@ -1,0 +1,9 @@
+CSN2
+V6
+E f92606a2-b7e2-4898-9e02-b845638e9174|FireArea
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C DeployableArea|-|{}|$D:"@s16212686674365818645/s9116597175810698698/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E e7ddb4c0-0f60-443c-b1ce-7e612509ff64|Flames|f92606a2-b7e2-4898-9e02-b845638e9174
+C Tx|3|P(0.0,-0.45,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C Vfx|2|{"autoPlay":true}

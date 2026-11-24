@@ -1,0 +1,8 @@
+CSN2
+V6
+E 7cbd60c7-b4dd-468a-b3e8-08925ffc6878|GrenadeVisual
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+E 7c8da08d-a44e-4d24-b72f-e0a822c7c295|Visual|7cbd60c7-b4dd-468a-b3e8-08925ffc6878
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C Msh|12|{"shadowParams":{"class":"horizon::platform_api::ShadowParams","data":{"castsShadows":true}}}
+C Mtl|-|{"materials":[]}

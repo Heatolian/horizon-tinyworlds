@@ -1,0 +1,14 @@
+CSN2
+V6
+E 945aa786-590d-41e7-9ccd-f4ad5f7b0111|DroppedItem
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C NSt|1|{"isAttainable":false}
+C ItemContainer|-|{"role":"loot","acceptTags":[],"initialSlotCount":1.0,"initialItems":[],"ownedByCharacter":false,"accessRange":3.0,"removeWhenEmpty":true,"accessMode":"Proximity"}|$D:"@s16212686674365818645/s11627974380165579759/s4237980480"
+C Interactable|-|{"action":"take","maxDistance":3.0}|$D:"@s16212686674365818645/s14096806208355564925/s4237980480"
+C LootVisual|-|{}|$D:"@s16212686674365818645/s1467642852175779288/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E 294ff5e2-8449-4d3c-b840-139660b12adc|InteractionSensor|945aa786-590d-41e7-9ccd-f4ad5f7b0111
+C Tx|3|P(0.0,0.0,0.0)R(-0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CSph|5|{"collisionLayer":"Layer3","radius":0.5}
+C Phy|11|{"type":"DynamicCollider","driveMode":"Kinematic"}
+C InteractionTargetComponent|-|{"lineOfSightRequired":false,"directTouchEnabled":true}|$D:"@s1262895183612548211/s7721712903437885478/s4237980480"

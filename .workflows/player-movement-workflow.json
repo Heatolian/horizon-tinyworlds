@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 2,
+  "id": "player-movement-workflow",
+  "name": "Player movement",
+  "description": "Tune how the player character moves: speed, acceleration, friction, and turn rate.",
+  "type": "runtime",
+  "inputs": [],
+  "hooks": [],
+  "datasources": [
+    {
+      "filter": [
+        [
+          {
+            "kind": "LOCAL_PLAYER"
+          }
+        ]
+      ],
+      "id": "player",
+      "type": "TEMPLATE"
+    }
+  ],
+  "presentation": {
+    "shape": "preview",
+    "previewMode": "preview",
+    "slots": [
+      {
+        "widget": "aiChat"
+      },
+      {
+        "widget": "subjectOutliner"
+      },
+      {
+        "widget": "runtimePreview"
+      },
+      {
+        "datasources": [
+          "player"
+        ],
+        "widget": "propertyPanel"
+      }
+    ]
+  }
+}

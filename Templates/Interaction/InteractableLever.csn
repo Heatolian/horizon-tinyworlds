@@ -1,0 +1,31 @@
+CSN2
+V6
+E f9a885ec-2ec5-4e7e-9154-cbf8637fcf29|InteractableLever
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C NSt|1|{"isAttainable":false}
+C SimpleInteractablePromptComponent|-|{}|$D:"@s16212686674365818645/s16823152531758547515/s4237980480"
+C SimpleInteractableToggle|-|{"pivot":"e374f87c-9afe-401d-92b3-7da51f92cb83","onRotation":{"x":0.0,"y":0.0,"z":-30.0},"turnSeconds":0.3}|$D:"@s16212686674365818645/s2373652517238324280/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E 345ed834-7367-4668-bad3-655358ab9639|Body|f9a885ec-2ec5-4e7e-9154-cbf8637fcf29
+C Tx|3|P(0.0,0.4,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CBox|2|{"halfExtents":"(0.2,0.4,0.2)"}
+C Phy|8|{"type":"StaticCollision"}
+E 18d35786-0873-41f5-a234-0b4f40a41b72|BaseMesh|345ed834-7367-4668-bad3-655358ab9639
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(0.4,0.8,0.4)
+C Msh|11|{"mesh":"@s24407058055595655/s4707432788469128401/s931111888","lightingParams":{"class":"horizon::platform_api::LightingParams","data":{"diffuseGISource":"LightProbes"}}}
+C Col|2|(0.35,0.35,0.38,1.0)
+C Mtl|2|{"materials":["@s16212686674365818645/s10224080950414184633/s157013062"]}
+C horizon::platform_api::HighlightPlatformComponent|1|{"enabled":false}
+E e374f87c-9afe-401d-92b3-7da51f92cb83|Hinge|345ed834-7367-4668-bad3-655358ab9639
+C Tx|3|P(0.0,0.4,0.0)R(0.0,0.0,30.0)S(1.0,1.0,1.0)
+E 3000ed5c-d11e-43b6-97ea-7052fd67177e|Handle|e374f87c-9afe-401d-92b3-7da51f92cb83
+C Tx|3|P(0.0,0.3,0.0)R(0.0,0.0,0.0)S(0.08,0.6,0.08)
+C Msh|11|{"mesh":"@s24407058055595655/s4707432788469128401/s931111888","lightingParams":{"class":"horizon::platform_api::LightingParams","data":{"diffuseGISource":"LightProbes"}}}
+C Col|2|(0.85,0.15,0.1,1.0)
+C Mtl|2|{"materials":["@s16212686674365818645/s10224080950414184633/s157013062"]}
+C horizon::platform_api::HighlightPlatformComponent|1|{"enabled":false}
+E 3607a962-194a-42ff-9d64-939bef7e0200|InteractionSensor|345ed834-7367-4668-bad3-655358ab9639
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CSph|5|{"collisionLayer":"Layer3","radius":1.0}
+C Phy|11|{"type":"DynamicCollider","driveMode":"Kinematic"}
+C InteractionTargetComponent|-|{"lineOfSightRequired":true,"directTouchEnabled":true}|$D:"@s1262895183612548211/s7721712903437885478/s4237980480"

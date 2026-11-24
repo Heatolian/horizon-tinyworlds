@@ -1,0 +1,25 @@
+CSN2
+V6
+E b7e8eef5-1640-464c-9c90-9645a90692f2|InteractableDoor
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C NSt|1|{"isAttainable":false}
+C SimpleInteractablePromptComponent|-|{}|$D:"@s16212686674365818645/s16823152531758547515/s4237980480"
+C SimpleInteractableToggle|-|{"pivot":"a9853ba0-a932-45a2-9f52-e6b1477b9996","onRotation":{"x":0.0,"y":90.0,"z":0.0},"turnSeconds":0.5}|$D:"@s16212686674365818645/s2373652517238324280/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E a9853ba0-a932-45a2-9f52-e6b1477b9996|Hinge|b7e8eef5-1640-464c-9c90-9645a90692f2
+C Tx|3|P(-0.5,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+E 2e6f570c-8409-40e1-a677-5ec9d3c45273|Panel|a9853ba0-a932-45a2-9f52-e6b1477b9996
+C Tx|3|P(0.5,1.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CBox|2|{"halfExtents":"(0.5,1.0,0.05)"}
+C Phy|11|{"type":"DynamicCollider","driveMode":"Kinematic"}
+E 91c26937-d05e-440a-9ee6-3738db68a3bf|PanelMesh|2e6f570c-8409-40e1-a677-5ec9d3c45273
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,2.0,0.1)
+C Msh|11|{"mesh":"@s24407058055595655/s4707432788469128401/s931111888","lightingParams":{"class":"horizon::platform_api::LightingParams","data":{"diffuseGISource":"LightProbes"}}}
+C Col|2|(0.45,0.3,0.15,1.0)
+C Mtl|2|{"materials":["@s16212686674365818645/s10224080950414184633/s157013062"]}
+C horizon::platform_api::HighlightPlatformComponent|1|{"enabled":false}
+E 75587c70-868c-4da1-a013-68fc550fe3f8|InteractionSensor|2e6f570c-8409-40e1-a677-5ec9d3c45273
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CBox|2|{"collisionLayer":"Layer3","halfExtents":"(0.7,1.0,0.7)"}
+C Phy|11|{"type":"DynamicCollider","driveMode":"Kinematic"}
+C InteractionTargetComponent|-|{"lineOfSightRequired":true,"directTouchEnabled":true}|$D:"@s1262895183612548211/s7721712903437885478/s4237980480"

@@ -1,0 +1,558 @@
+{
+    "version": 2,
+    "graphs": [
+        {
+            "name": "main",
+            "type": "stateMachine",
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "startingState": "empty state",
+            "states": [
+                {
+                    "name": "empty state",
+                    "graph": "empty state",
+                    "empty": true
+                },
+                {
+                    "name": "jump state",
+                    "graph": "jump state"
+                },
+                {
+                    "name": "inAir state",
+                    "graph": "inAir state",
+                    "phaseUpdateGraph": "inAir state_phaseUpdateGraph",
+                    "looping": true
+                },
+                {
+                    "name": "landing state",
+                    "graph": "landing state",
+                    "phaseUpdateGraph": "landing state_phaseUpdateGraph"
+                }
+            ],
+            "transitions": [
+                {
+                    "from": "jump state",
+                    "to": "empty state",
+                    "blendTimeSec": 0.1,
+                    "condition": "speedClass:moving",
+                    "conditions": [
+                        {
+                            "variable": "Grounded",
+                            "value": true,
+                            "operation": "equal"
+                        }
+                    ]
+                },
+                {
+                    "from": "inAir state",
+                    "to": "empty state",
+                    "blendTimeSec": 0.1,
+                    "condition": "speedClass:moving",
+                    "conditions": [
+                        {
+                            "variable": "Grounded",
+                            "value": true,
+                            "operation": "equal"
+                        }
+                    ]
+                },
+                {
+                    "from": "landing state",
+                    "to": "empty state",
+                    "blendTimeSec": 0.1,
+                    "condition": "speedClass:moving",
+                    "conditions": [
+                        {
+                            "variable": "Grounded",
+                            "value": true,
+                            "operation": "equal"
+                        }
+                    ]
+                },
+                {
+                    "from": "empty state",
+                    "to": "jump state",
+                    "event": "jumpTrigger",
+                    "blendTimeSec": 0.05
+                },
+                {
+                    "from": "empty state",
+                    "to": "inAir state",
+                    "blendTimeSec": 0.1,
+                    "conditions": [
+                        {
+                            "variable": "Grounded",
+                            "value": false,
+                            "operation": "equal"
+                        },
+                        {
+                            "variable": "TimeTillLand",
+                            "value": 0.2,
+                            "operation": "greater"
+                        },
+                        {
+                            "variable": "Jumping",
+                            "value": false,
+                            "operation": "equal"
+                        }
+                    ]
+                },
+                {
+                    "from": "jump state",
+                    "to": "inAir state",
+                    "blendTimeSec": 0.1,
+                    "blendEarly": true,
+                    "conditions": [
+                        {
+                            "variable": "Grounded",
+                            "value": false,
+                            "operation": "equal"
+                        },
+                        {
+                            "variable": "__state_finished",
+                            "value": true,
+                            "operation": "equal"
+                        }
+                    ]
+                },
+                {
+                    "from": "jump state",
+                    "to": "landing state",
+                    "blendTimeSec": 0.1,
+                    "condition": "speedClass:stationary",
+                    "conditions": [
+                        {
+                            "variable": "Grounded",
+                            "value": true,
+                            "operation": "equal"
+                        }
+                    ]
+                },
+                {
+                    "from": "inAir state",
+                    "to": "landing state",
+                    "blendTimeSec": 0.1,
+                    "condition": "speedClass:stationary",
+                    "conditions": [
+                        {
+                            "variable": "Grounded",
+                            "value": true,
+                            "operation": "equal"
+                        }
+                    ]
+                },
+                {
+                    "from": "landing state",
+                    "to": "jump state",
+                    "event": "jumpTrigger",
+                    "blendTimeSec": 0.1
+                },
+                {
+                    "from": "landing state",
+                    "to": "empty state",
+                    "blendTimeSec": 0.1,
+                    "blendEarly": true,
+                    "conditions": [
+                        {
+                            "variable": "__state_finished",
+                            "value": true,
+                            "operation": "equal"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "empty state",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "nodes": [],
+            "links": []
+        },
+        {
+            "name": "jump state",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "nodes": [
+                {
+                    "name": "Sample Animation",
+                    "type": "sampleAnim"
+                },
+                {
+                    "name": "land",
+                    "type": "getAnimationVariable",
+                    "members": {
+                        "variable": "jump",
+                        "isDominantAnim": true
+                    }
+                }
+            ],
+            "links": [
+                [
+                    "land:outputAnim",
+                    "Sample Animation:inputClip"
+                ],
+                [
+                    "Sample Animation:outputPose",
+                    ":pose"
+                ]
+            ]
+        },
+        {
+            "name": "inAir state",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "nodes": [
+                {
+                    "name": "sampleAnim",
+                    "type": "sampleAnim"
+                },
+                {
+                    "name": "jump",
+                    "type": "getAnimationVariable",
+                    "members": {
+                        "variable": "inAir",
+                        "isDominantAnim": true
+                    }
+                }
+            ],
+            "links": [
+                [
+                    "jump:outputAnim",
+                    "sampleAnim:inputClip"
+                ],
+                [
+                    "sampleAnim:outputPose",
+                    ":pose"
+                ],
+                [
+                    ":inputStatePhase",
+                    "sampleAnim:inputPhase"
+                ]
+            ]
+        },
+        {
+            "name": "landing state",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "nodes": [
+                {
+                    "name": "sampleAnim",
+                    "type": "sampleAnim",
+                    "members": {
+                        "isDominantAnim": true
+                    }
+                },
+                {
+                    "name": "land",
+                    "type": "getAnimationVariable",
+                    "members": {
+                        "variable": "land"
+                    }
+                }
+            ],
+            "links": [
+                [
+                    ":inputStatePhase",
+                    "sampleAnim:inputPhase"
+                ],
+                [
+                    "land:outputAnim",
+                    "sampleAnim:inputClip"
+                ],
+                [
+                    "sampleAnim:outputPose",
+                    ":pose"
+                ]
+            ]
+        },
+        {
+            "name": "landing state_phaseUpdateGraph",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "currentStatePhase",
+                    "type": "float"
+                },
+                {
+                    "name": "deltaTime",
+                    "type": "float"
+                },
+                {
+                    "name": "phasePerSecond",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "newStatePhase",
+                    "type": "float"
+                }
+            ],
+            "nodes": [
+                {
+                    "name": "calculateNewStatePhase",
+                    "type": "mathExpression",
+                    "members": {
+                        "expression": "currentStatePhase + phasePerSecond * deltaTime * playbackRate"
+                    }
+                },
+                {
+                    "name": "playbackRate",
+                    "type": "constFloat",
+                    "members": {
+                        "value": 1
+                    }
+                }
+            ],
+            "links": [
+                [
+                    ":currentStatePhase",
+                    "calculateNewStatePhase:currentStatePhase"
+                ],
+                [
+                    ":deltaTime",
+                    "calculateNewStatePhase:deltaTime"
+                ],
+                [
+                    ":phasePerSecond",
+                    "calculateNewStatePhase:phasePerSecond"
+                ],
+                [
+                    "playbackRate:outputValue",
+                    "calculateNewStatePhase:playbackRate"
+                ],
+                [
+                    "calculateNewStatePhase:value",
+                    ":newStatePhase"
+                ]
+            ]
+        },
+        {
+            "name": "inAir state_phaseUpdateGraph",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "currentStatePhase",
+                    "type": "float"
+                },
+                {
+                    "name": "deltaTime",
+                    "type": "float"
+                },
+                {
+                    "name": "phasePerSecond",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "newStatePhase",
+                    "type": "float"
+                }
+            ],
+            "nodes": [
+                {
+                    "name": "calculateNewStatePhase",
+                    "type": "mathExpression",
+                    "members": {
+                        "expression": "currentStatePhase + phasePerSecond * deltaTime * playbackRate"
+                    }
+                },
+                {
+                    "name": "playbackRate",
+                    "type": "constFloat",
+                    "members": {
+                        "value": 1
+                    }
+                }
+            ],
+            "links": [
+                [
+                    ":currentStatePhase",
+                    "calculateNewStatePhase:currentStatePhase"
+                ],
+                [
+                    ":deltaTime",
+                    "calculateNewStatePhase:deltaTime"
+                ],
+                [
+                    ":phasePerSecond",
+                    "calculateNewStatePhase:phasePerSecond"
+                ],
+                [
+                    "playbackRate:outputValue",
+                    "calculateNewStatePhase:playbackRate"
+                ],
+                [
+                    "calculateNewStatePhase:value",
+                    ":newStatePhase"
+                ]
+            ]
+        },
+        {
+            "name": "speedClass",
+            "type": "dataflow",
+            "outputs": [
+                {
+                    "name": "moving",
+                    "type": "bool"
+                },
+                {
+                    "name": "stationary",
+                    "type": "bool"
+                }
+            ],
+            "nodes": [
+                {
+                    "name": "Speed",
+                    "type": "getDynamicStoreValueFloat",
+                    "members": {
+                        "key": "Speed"
+                    }
+                },
+                {
+                    "name": "isMoving",
+                    "type": "mathExpression",
+                    "members": {
+                        "expression": "speed >= 0.5"
+                    }
+                },
+                {
+                    "name": "isStationary",
+                    "type": "mathExpression",
+                    "members": {
+                        "expression": "speed < 0.5"
+                    }
+                }
+            ],
+            "links": [
+                [
+                    "Speed:outputValue",
+                    "isMoving:speed"
+                ],
+                [
+                    "Speed:outputValue",
+                    "isStationary:speed"
+                ],
+                [
+                    "isMoving:value",
+                    ":moving"
+                ],
+                [
+                    "isStationary:value",
+                    ":stationary"
+                ]
+            ]
+        }
+    ],
+    "variables": [
+        {
+            "type": "bool",
+            "name": "Grounded",
+            "source": "gameplay",
+            "default": true
+        },
+        {
+            "type": "bool",
+            "name": "Jumping",
+            "source": "gameplay",
+            "default": false
+        },
+        {
+            "type": "assetId",
+            "name": "jump",
+            "source": "remap",
+            "default": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "10871894303766468631",
+                "targetId": "3829385675"
+            }
+        },
+        {
+            "type": "assetId",
+            "name": "inAir",
+            "source": "remap",
+            "default": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "5268509213344629033",
+                "targetId": "3829385675"
+            }
+        },
+        {
+            "type": "float",
+            "name": "Speed",
+            "source": "gameplay",
+            "default": 0
+        },
+        {
+            "type": "assetId",
+            "name": "land",
+            "source": "remap",
+            "default": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "14898833759247957517",
+                "targetId": "3829385675"
+            }
+        },
+        {
+            "type": "float",
+            "name": "TimeTillLand",
+            "source": "gameplay",
+            "default": 0
+        }
+    ],
+    "hierarchy": {
+        "packageOrRemoteId": "16212686674365818645",
+        "ingestionId": "4494789261054954399",
+        "targetId": "3998529611"
+    }
+}

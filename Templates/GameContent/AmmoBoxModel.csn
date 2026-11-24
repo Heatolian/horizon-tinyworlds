@@ -1,0 +1,9 @@
+CSN2
+V6
+E 0199e0f6-856a-4e09-b956-371b4744d114|AmmoBoxModel
+C Tx|3|P(0,0,0)R(0.0,0.0,0.0)S(1,1,1)
+E dab09fbb-9a16-493e-bd69-3136a423361f|Visual|0199e0f6-856a-4e09-b956-371b4744d114
+C Tx|3|P(0,0.06,0)R(0.0,0.0,0.0)S(0.2,0.12,0.12)
+C Msh|11|{"mesh":"@s24407058055595655/s4707432788469128401/s931111888","lightingParams":{"class":"horizon::platform_api::LightingParams","data":{"diffuseGISource":"LightProbes"}}}
+C Col|2|(0.35,0.4,0.2,1.0)
+C Mtl|2|{"materials":["@s16212686674365818645/s10224080950414184633/s157013062"]}

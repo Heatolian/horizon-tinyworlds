@@ -1,0 +1,19 @@
+CSN2
+V6
+E e8ca0323-cfaf-4a17-ac7c-eb451101bd9f|LootRifle
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C NSt|1|{"isAttainable":true}
+C ItemContainer|-|{"role":"loot","acceptTags":[],"initialSlotCount":1.0,"initialItems":["rifle"],"ownedByCharacter":false,"accessMode":"Proximity","accessRange":3.0,"removeWhenEmpty":true}|$D:"@s16212686674365818645/s11627974380165579759/s4237980480"
+C Interactable|-|{"action":"take","maxDistance":3.0}|$D:"@s16212686674365818645/s14096806208355564925/s4237980480"
+C LootVisual|-|{}|$D:"@s16212686674365818645/s1467642852175779288/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E 8706ebd9-d981-4aca-8fd2-0f3c7ac9ee41|InteractionSensor|e8ca0323-cfaf-4a17-ac7c-eb451101bd9f
+C Tx|3|P(0.0,0.0,0.0)R(-0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CSph|5|{"collisionLayer":"Layer3","radius":0.5}
+C Phy|11|{"type":"DynamicCollider","driveMode":"Kinematic"}
+C InteractionTargetComponent|-|{"lineOfSightRequired":false,"directTouchEnabled":true}|$D:"@s1262895183612548211/s7721712903437885478/s4237980480"
+E 4d15a8b3-fb09-4e7a-992a-bdc602a1ee8f|EditorPreview|e8ca0323-cfaf-4a17-ac7c-eb451101bd9f
+ET "@Templates/Weapons/RifleVisual.hstf"
+EDS [{"sourceId":"Muzzle","components":[{"dataType":"DA","data":{"class":"horizon::platform_api::TransformPlatformComponent","version":3,"data":{"localPosition":"(0.604214072227478,0.000028133392333984376,-0.08727472275495529)","localRotation":"(0.0,1.5707963705062867,0.0)"}}}],"attributes":[]}]
+E 04417f9f-5d27-47d2-a016-bc3b3cd2afe6|GripPoint|e8ca0323-cfaf-4a17-ac7c-eb451101bd9f
+C Tx|3|P(0.0,0.45,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)

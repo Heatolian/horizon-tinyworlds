@@ -1,0 +1,17 @@
+CSN2
+V6
+E 9d14a93d-e488-4172-afc9-2d1fcfdea9bd|LootSword
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C NSt|1|{"isAttainable":true}
+C ItemContainer|-|{"role":"loot","acceptTags":[],"initialSlotCount":1.0,"initialItems":["sword"],"ownedByCharacter":false,"accessMode":"Proximity","accessRange":3.0,"removeWhenEmpty":true}|$D:"@s16212686674365818645/s11627974380165579759/s4237980480"
+C Interactable|-|{"action":"take","maxDistance":3.0}|$D:"@s16212686674365818645/s14096806208355564925/s4237980480"
+C LootVisual|-|{}|$D:"@s16212686674365818645/s1467642852175779288/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E aedb15cc-eb4b-48ac-b187-92a4306d2355|InteractionSensor|9d14a93d-e488-4172-afc9-2d1fcfdea9bd
+C Tx|3|P(0.0,0.0,0.0)R(-0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CSph|5|{"collisionLayer":"Layer3","radius":0.5}
+C Phy|11|{"type":"DynamicCollider","driveMode":"Kinematic"}
+C InteractionTargetComponent|-|{"lineOfSightRequired":false,"directTouchEnabled":true}|$D:"@s1262895183612548211/s7721712903437885478/s4237980480"
+E d098acb0-e514-4017-bda0-da5ca102c483|EditorPreview|9d14a93d-e488-4172-afc9-2d1fcfdea9bd
+ET "@Templates/Weapons/SwordVisual.hstf"
+EDS []

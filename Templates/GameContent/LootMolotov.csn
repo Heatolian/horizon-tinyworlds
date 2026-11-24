@@ -1,0 +1,17 @@
+CSN2
+V6
+E 90a959ec-8605-4f76-b748-f0da96f1f304|LootMolotov
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C NSt|1|{"isAttainable":true}
+C ItemContainer|-|{"role":"loot","acceptTags":[],"initialSlotCount":1.0,"initialItems":["molotov*3"],"ownedByCharacter":false,"accessMode":"Proximity","accessRange":3.0,"removeWhenEmpty":true}|$D:"@s16212686674365818645/s11627974380165579759/s4237980480"
+C Interactable|-|{"action":"take","maxDistance":3.0}|$D:"@s16212686674365818645/s14096806208355564925/s4237980480"
+C LootVisual|-|{}|$D:"@s16212686674365818645/s1467642852175779288/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E bf2a86b8-2746-43c1-b446-0e093945408e|InteractionSensor|90a959ec-8605-4f76-b748-f0da96f1f304
+C Tx|3|P(0.0,0.0,0.0)R(-0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CSph|5|{"collisionLayer":"Layer3","radius":0.5}
+C Phy|11|{"type":"DynamicCollider","driveMode":"Kinematic"}
+C InteractionTargetComponent|-|{"lineOfSightRequired":false,"directTouchEnabled":true}|$D:"@s1262895183612548211/s7721712903437885478/s4237980480"
+E 7e56dbde-fcee-4786-8d44-53037e9ea35f|EditorPreview|90a959ec-8605-4f76-b748-f0da96f1f304
+ET "@Templates/Weapons/MolotovVisual.hstf"
+EDS []

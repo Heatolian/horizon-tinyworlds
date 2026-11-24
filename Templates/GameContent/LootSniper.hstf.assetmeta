@@ -1,0 +1,16 @@
+{
+    "class": "horizon::AssetMetadata",
+    "version": 2,
+    "data": {
+        "id": "6621911444537772022",
+        "pipelineVersion": 1,
+        "docMeta": {
+            "class": "horizon::DocMetadata",
+            "data": {}
+        },
+        "provenance": {
+            "class": "horizon::AssetProvenance",
+            "data": {}
+        }
+    }
+}

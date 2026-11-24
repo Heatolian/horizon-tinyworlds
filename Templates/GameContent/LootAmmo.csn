@@ -1,0 +1,19 @@
+CSN2
+V6
+E a4d5f2c6-9e94-4268-8841-16e62e8a1db5|LootAmmo
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C NSt|1|{"isAttainable":false}
+C ItemContainer|-|{"role":"loot","acceptTags":[],"initialSlotCount":1.0,"initialItems":["ammo_9mm*30"],"ownedByCharacter":false,"accessRange":3.0,"removeWhenEmpty":true,"accessMode":"Proximity"}|$D:"@s16212686674365818645/s11627974380165579759/s4237980480"
+C Interactable|-|{"action":"take","maxDistance":3.0}|$D:"@s16212686674365818645/s14096806208355564925/s4237980480"
+C LootVisual|-|{}|$D:"@s16212686674365818645/s1467642852175779288/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E 31164468-8569-4cf3-a3ff-976e3dfa0d0e|InteractionSensor|a4d5f2c6-9e94-4268-8841-16e62e8a1db5
+C Tx|3|P(0.0,0.0,0.0)R(-0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CSph|5|{"collisionLayer":"Layer3","radius":0.5}
+C Phy|11|{"type":"DynamicCollider","driveMode":"Kinematic"}
+C InteractionTargetComponent|-|{"lineOfSightRequired":false,"directTouchEnabled":true}|$D:"@s1262895183612548211/s7721712903437885478/s4237980480"
+E 7cc9cfce-8a28-4674-8b12-56737c8e0ff9|EditorPreview|a4d5f2c6-9e94-4268-8841-16e62e8a1db5
+ET "@Templates/GameContent/AmmoBoxModel.hstf"
+EDS []
+E 1412f712-3fc2-487b-9bc7-12af649cac0a|GripPoint|a4d5f2c6-9e94-4268-8841-16e62e8a1db5
+C Tx|3|P(0.0,0.45,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)

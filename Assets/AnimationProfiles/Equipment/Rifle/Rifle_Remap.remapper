@@ -1,0 +1,39 @@
+{
+    "aliasAnimationMappings": [
+        {
+            "name": "idleItem",
+            "animName": "",
+            "targetSpecType": "alias",
+            "alias": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "3183857766661746965",
+                "targetId": "3829385675"
+            }
+        },
+        {
+            "name": "useItem",
+            "animName": "",
+            "targetSpecType": "alias",
+            "alias": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "16219671523948143482",
+                "targetId": "3829385675"
+            }
+        },
+        {
+            "name": "reloadItem",
+            "animName": "",
+            "targetSpecType": "alias",
+            "alias": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "4497153158722339370",
+                "targetId": "3829385675"
+            }
+        }
+    ],
+    "blendAnimationMappings": [],
+    "randomAnimationMappings": [],
+    "sequenceAnimationMappings": [],
+    "name": "RiflePage",
+    "version": 1
+}

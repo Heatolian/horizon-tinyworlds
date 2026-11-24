@@ -1,0 +1,60 @@
+{
+    "__attr__": {
+        "__version__": {
+            "version": 1
+        }
+    },
+    "name": "M_YellowTrans",
+    "attributes": [
+        {
+            "name": "RenderGroup",
+            "value": {
+                "type": "String",
+                "stringValue": "translucent"
+            }
+        },
+        {
+            "name": "lightingmode",
+            "value": {
+                "type": "String",
+                "stringValue": "Unlit"
+            }
+        },
+        {
+            "name": "blendmode",
+            "value": {
+                "type": "String",
+                "stringValue": "Alpha"
+            }
+        },
+        {
+            "name": "cullmode",
+            "value": {
+                "type": "String",
+                "stringValue": "Off"
+            }
+        },
+        {
+            "name": "layer0ColorTint",
+            "value": {
+                "type": "Floats",
+                "floatValues": [
+                    1.0,
+                    0.22696587443351746,
+                    0.0,
+                    0.43636399507522585
+                ]
+            }
+        }
+    ],
+    "shaderAssetId": {
+        "packageOrRemoteId": "33451255657851516",
+        "ingestionId": "12536732106106040758",
+        "targetId": "2708897769"
+    },
+    "variantKeywords": [
+        "blendmode_alpha",
+        "cullmode_off",
+        "lightingmode_unlit"
+    ]
+}

@@ -1,0 +1,9 @@
+CSN2
+V6
+E b665b658-4c6f-44bc-b7c0-7ded48a037a0|SwordVisual
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C GameplayCuePresentation|-|{"bindings":[{"class":"GameplayCueBinding","definitionAsset":"@s16212686674365818645/s16584264630199916469/s4237980480","data":{"cueTag":"cue.weapon.fire","presentationEntity":"b665b658-4c6f-44bc-b7c0-7ded48a037a0","sound":"@s16212686674365818645/s1716435098644049021/s1366267635"}}]}|$D:"@s16212686674365818645/s16584264630199916469/s4237980480"
+E 91b8cc8f-0df6-40c6-be11-44c730045468|Visual|b665b658-4c6f-44bc-b7c0-7ded48a037a0
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C Msh|12|{"mesh":"@s16212686674365818645/s3845878318104715568/s3363816896","shadowParams":{"class":"horizon::platform_api::ShadowParams","data":{"castsShadows":true}}}
+C Mtl|2|{"materials":["@s16212686674365818645/s3845878318104715568/s3995668904"],"perPartInstancedConstantParameterLists":[{"class":"horizon::renderer::InstancedConstantMaterialParameterList","data":{"parameters":[]}}]}

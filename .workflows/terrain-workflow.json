@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 2,
+  "id": "terrain-workflow",
+  "name": "Terrain",
+  "description": "Add terrain to the scene and stamp collections of content onto it.",
+  "type": "tool",
+  "presentation": {
+    "shape": "threeColumn",
+    "slots": [
+      {
+        "widget": "aiChat"
+      },
+      {
+        "widget": "sceneView"
+      },
+      {
+        "widget": "terrain"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+CSN2
+V6
+E 2c53a2ad-be8b-4e16-a668-4aee394c6ce7|Molotov
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CSph|5|{"collisionLayer":"Layer1","radius":0.075}
+C Phy|11|{"type":"DynamicCollider","collisionEnabled":true,"useGravity":true,"driveMode":"None"}
+C GASDeployable|-|{}|$D:"@s16212686674365818645/s6947327591168561233/s4237980480"
+C GameplayCuePresentation|-|{"bindings":[{"class":"GameplayCueBinding","definitionAsset":"@s16212686674365818645/s16584264630199916469/s4237980480","data":{"cueTag":"cue.deployable.detonate","presentationEntity":"b576e9f4-65dc-4752-894d-deef1d3bf8c0"}}]}|$D:"@s16212686674365818645/s16584264630199916469/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E 48ba0fe0-39cc-4dc7-ad33-6df7e2cb0daa|Visual|2c53a2ad-be8b-4e16-a668-4aee394c6ce7
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C Msh|12|{"shadowParams":{"class":"horizon::platform_api::ShadowParams","data":{"castsShadows":true}}}
+C Mtl|-|{"materials":[]}
+E b576e9f4-65dc-4752-894d-deef1d3bf8c0|Detonation|2c53a2ad-be8b-4e16-a668-4aee394c6ce7
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C Vfx|2|{"autoPlay":false}

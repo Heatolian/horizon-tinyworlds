@@ -1,0 +1,10 @@
+CSN2
+V6
+E b41dc29a-f14a-4008-ab1f-4b66448fc43d|Fireball
+C Tx|3|P(0.0,0.0,0.0)R(-0.0,0.0,0.0)S(0.3,0.3,0.3)
+C Msh|11|{"mesh":"@s24407058055595655/s4300205889696081881/s4060876394","lightingParams":{"class":"horizon::platform_api::LightingParams","data":{"diffuseGISource":"LightProbes"}}}
+C CSph|3|{"collisionLayer":"Layer1","radius":0.5}
+C Phy|8|{"type":"Trigger","collisionEnabled":true,"useGravity":false}
+C Col|2|(1.0,0.35,0.05,1.0)
+C Mtl|2|{"materials":["@s16212686674365818645/s10224080950414184633/s157013062"]}
+C GASProjectile|-|{}|$D:"@s16212686674365818645/s16139834930676163514/s4237980480"

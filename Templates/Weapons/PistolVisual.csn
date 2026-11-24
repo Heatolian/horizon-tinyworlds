@@ -1,0 +1,12 @@
+CSN2
+V6
+E 47ca73b1-b81c-4b39-a4fa-da0e9ca67041|PistolVisual
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C GameplayCuePresentation|-|{"bindings":[{"class":"GameplayCueBinding","definitionAsset":"@s16212686674365818645/s16584264630199916469/s4237980480","data":{"cueTag":"cue.weapon.fire","presentationEntity":"bc8457cd-a627-48cf-986e-ebaeb367f93b","sound":"@s16212686674365818645/s10911589208970047237/s1366267635"}},{"class":"GameplayCueBinding","definitionAsset":"@s16212686674365818645/s16584264630199916469/s4237980480","data":{"cueTag":"cue.weapon.reload","sound":"@s16212686674365818645/s5643809057302555338/s1366267635"}}]}|$D:"@s16212686674365818645/s16584264630199916469/s4237980480"
+E bc8457cd-a627-48cf-986e-ebaeb367f93b|Muzzle|47ca73b1-b81c-4b39-a4fa-da0e9ca67041
+C Tx|3|{"localPosition":"(0.17041704058647157,0.000022888179955771194,-0.07962905615568161)","localRotation":"(-0.0,1.5707964897155762,0.0)","localScale":"(1.0,1.0,1.0)","worldPosition":{"x":0.0,"y":0.0,"z":0.0},"worldRotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"worldScale":{"x":1.0,"y":1.0,"z":1.0},"localRotationQuat":{"x":0.0,"y":0.0,"z":0.0,"w":1.0}}
+C Vfx|2|{"vfxAsset":"@s16212686674365818645/s18149701493192708647/s1153353245","autoPlay":false}
+E 3c82d57e-1ae8-44ad-86c9-f172c7a56c3a|Visual|47ca73b1-b81c-4b39-a4fa-da0e9ca67041
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C Msh|12|{"mesh":"@s16212686674365818645/s7269668957879389490/s3132610268","shadowParams":{"class":"horizon::platform_api::ShadowParams","data":{"castsShadows":true}}}
+C Mtl|2|{"materials":["@s16212686674365818645/s7269668957879389490/s794071152"],"perPartInstancedConstantParameterLists":[{"class":"horizon::renderer::InstancedConstantMaterialParameterList","data":{"parameters":[]}}]}

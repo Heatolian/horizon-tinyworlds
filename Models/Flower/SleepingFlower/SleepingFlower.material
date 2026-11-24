@@ -1,0 +1,25 @@
+{
+    "__attr__": {
+        "__version__": {
+            "version": 1
+        }
+    },
+    "attributes": [
+        {
+            "name": "baseColorAndRoughnessTex",
+            "value": {
+                "type": "assetId",
+                "assetIdValue": {
+                    "packageOrRemoteId": "16212686674365818645",
+                    "ingestionId": "1394077137574393336",
+                    "targetId": "1184719840061264459"
+                }
+            }
+        }
+    ],
+    "shaderAssetId": {
+        "packageOrRemoteId": "30952996677677480",
+        "ingestionId": "15124141720843299017",
+        "targetId": "2708897769"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "id": "16212686674365818645",
+    "author": "calvindongsteam",
+    "name": "remix_of_2879611305751680_1795468582",
+    "dependencies": [
+        {
+            "name": "meta/assistant",
+            "version": "0.6.3"
+        },
+        {
+            "name": "meta/assistant_experimental",
+            "version": "0.6.4"
+        },
+        {
+            "name": "meta/assistant_provisional",
+            "version": "0.6.2"
+        },
+        {
+            "name": "meta/editor_starter_kit",
+            "version": "1.18.0"
+        },
+        {
+            "name": "meta/shaders_bb",
+            "version": "0.0.24"
+        },
+        {
+            "name": "meta/worlds_sdk",
+            "version": "0.8.22"
+        }
+    ]
+}

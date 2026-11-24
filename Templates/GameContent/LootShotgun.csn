@@ -1,0 +1,17 @@
+CSN2
+V6
+E 568fad34-e37e-47fc-ba4f-8174d06b148a|LootShotgun
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C NSt|1|{"isAttainable":true}
+C ItemContainer|-|{"role":"loot","acceptTags":[],"initialSlotCount":1.0,"initialItems":["shotgun"],"ownedByCharacter":false,"accessMode":"Proximity","accessRange":3.0,"removeWhenEmpty":true}|$D:"@s16212686674365818645/s11627974380165579759/s4237980480"
+C Interactable|-|{"action":"take","maxDistance":3.0}|$D:"@s16212686674365818645/s14096806208355564925/s4237980480"
+C LootVisual|-|{}|$D:"@s16212686674365818645/s1467642852175779288/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E 01cb6275-3396-4b69-aa46-ff3acf2f68ca|InteractionSensor|568fad34-e37e-47fc-ba4f-8174d06b148a
+C Tx|3|P(0.0,0.0,0.0)R(-0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CSph|5|{"collisionLayer":"Layer3","radius":0.5}
+C Phy|11|{"type":"DynamicCollider","driveMode":"Kinematic"}
+C InteractionTargetComponent|-|{"lineOfSightRequired":false,"directTouchEnabled":true}|$D:"@s1262895183612548211/s7721712903437885478/s4237980480"
+E 2770d496-6f77-40fb-8f71-339b195afb1d|EditorPreview|568fad34-e37e-47fc-ba4f-8174d06b148a
+ET "@Templates/Weapons/RifleVisual.hstf"
+EDS [{"sourceId":"Muzzle","components":[{"dataType":"DA","data":{"class":"horizon::platform_api::TransformPlatformComponent","version":3,"data":{"localPosition":"(0.604214072227478,0.000028133392333984376,-0.08727472275495529)","localRotation":"(0.0,1.5707963705062867,0.0)"}}}],"attributes":[]}]

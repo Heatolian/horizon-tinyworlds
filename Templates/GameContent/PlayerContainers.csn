@@ -1,0 +1,16 @@
+CSN2
+V6
+E d539521b-d3e9-4ac7-8073-cad09381d745|PlayerContainers
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C NSt|1|{"isAttainable":false}
+C ItemRequestServer|-|{}|$D:"@s16212686674365818645/s4268272324109030371/s4237980480"
+C DropOnDeath|-|{"bagTemplate":"@s16212686674365818645/s921867435846831478/s2719744159"}|$D:"@s16212686674365818645/s3532754983258963694/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E bfe37e35-25c6-47fb-91f5-378602d4e419|Loadout|d539521b-d3e9-4ac7-8073-cad09381d745
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C ItemContainer|-|{"role":"loadout","acceptTags":["weapon"],"initialSlotCount":3.0,"initialItems":[],"ownedByCharacter":false,"equipMode":"Selected","autoPlacePriority":2.0}|$D:"@s16212686674365818645/s11627974380165579759/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E 05ce300a-85b5-4b07-bd9e-3cb50eaae3d8|Backpack|d539521b-d3e9-4ac7-8073-cad09381d745
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C ItemContainer|-|{"role":"backpack","acceptTags":[],"initialSlotCount":20.0,"initialItems":[],"ownedByCharacter":false,"autoPlacePriority":1.0}|$D:"@s16212686674365818645/s11627974380165579759/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]

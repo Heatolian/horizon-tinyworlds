@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 2,
+  "id": "audio-mixer-workflow",
+  "name": "Audio mixer",
+  "description": "Balance the levels of this game's audio buses.",
+  "type": "tool",
+  "presentation": {
+    "shape": "threeColumn",
+    "slots": [
+      {
+        "widget": "aiChat"
+      },
+      {
+        "widget": "audioMixer"
+      },
+      {
+        "widget": "runtimePreview"
+      }
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+    "version": 2,
+    "graphs": [
+        {
+            "name": "main",
+            "type": "stateMachine",
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "startingState": "empty_state",
+            "states": [
+                {
+                    "name": "TakeDamage",
+                    "graph": "TakeDamage"
+                },
+                {
+                    "name": "empty_state",
+                    "graph": "empty_state",
+                    "empty": true
+                }
+            ],
+            "transitions": [
+                {
+                    "from": "TakeDamage",
+                    "to": "TakeDamage",
+                    "event": "TakeDamage",
+                    "blendTimeSec": 0.15
+                },
+                {
+                    "from": "TakeDamage",
+                    "to": "empty_state",
+                    "blendTimeSec": 0.15,
+                    "blendEarly": false,
+                    "conditions": [
+                        {
+                            "variable": "__state_finished",
+                            "value": true,
+                            "operation": "equal"
+                        }
+                    ]
+                },
+                {
+                    "from": "empty_state",
+                    "to": "TakeDamage",
+                    "event": "TakeDamage",
+                    "blendTimeSec": 0.15
+                }
+            ]
+        },
+        {
+            "name": "TakeDamage",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "nodes": [
+                {
+                    "name": "TakeDamage",
+                    "type": "getAnimationVariable",
+                    "members": {
+                        "variable": "TakeDamage"
+                    }
+                },
+                {
+                    "name": "sampleAnim",
+                    "type": "sampleAnim"
+                }
+            ],
+            "links": [
+                [
+                    "TakeDamage:outputAnim",
+                    "sampleAnim:inputClip"
+                ],
+                [
+                    ":inputStatePhase",
+                    "sampleAnim:inputPhase"
+                ],
+                [
+                    "sampleAnim:outputPose",
+                    ":pose"
+                ]
+            ]
+        },
+        {
+            "name": "empty_state",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "nodes": [],
+            "links": []
+        }
+    ],
+    "variables": [
+        {
+            "type": "assetId",
+            "name": "TakeDamage",
+            "source": "remap",
+            "default": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "7906467246814095665",
+                "targetId": "3829385675"
+            }
+        }
+    ],
+    "hierarchy": {
+        "packageOrRemoteId": "16212686674365818645",
+        "ingestionId": "888539076551402696",
+        "targetId": "3998529611"
+    }
+}

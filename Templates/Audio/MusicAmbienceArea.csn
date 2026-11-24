@@ -1,0 +1,13 @@
+CSN2
+V6
+E a706184d-dfc7-4cfd-b401-875ef4ef50f1|MusicAmbienceArea
+C Tx|3|P(0,0,0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C NSt|1|{"isAttainable":false}
+C MusicAmbienceArea|-|{"music":"caeae784-0b5c-4f8b-b2d5-caec530d3333","ambience":"40e3caed-778b-4aa4-85c7-d7fe88213ff4","radius":4.0,"fadeSeconds":1.0,"musicVolumes":{"x":0.25,"y":0.6},"ambienceVolumes":{"x":0.5,"y":0.2},"ambienceReverb":{"x":0.1,"y":0.35},"calmDistance":{"x":10.0,"y":16.0},"actionDistance":{"x":12.0,"y":20.0},"intensity":0.0,"audioEnabled":false}|$D:"@s16212686674365818645/s13199560431099188467/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E caeae784-0b5c-4f8b-b2d5-caec530d3333|music|a706184d-dfc7-4cfd-b401-875ef4ef50f1
+C Tx|3|P(0,1,0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C Snd|17|{"soundEmitterType":"NonSpatial","playVolume":0.0,"loop":true,"startCondition":"None","stopCondition":"None","startLoopAtRandomPosition":false,"minMaxPitch":{"x":1.0,"y":1.0},"minMaxDistance":{"x":1.0,"y":4.0},"audioFalloff":"Linear","reverbSendLevel":0.0}
+E 40e3caed-778b-4aa4-85c7-d7fe88213ff4|ambience|a706184d-dfc7-4cfd-b401-875ef4ef50f1
+C Tx|3|P(0,1,0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C Snd|17|{"soundEmitterType":"Spatial","playVolume":0.0,"loop":true,"startCondition":"None","stopCondition":"None","startLoopAtRandomPosition":true,"minMaxPitch":{"x":1.0,"y":1.0},"minMaxDistance":{"x":10.0,"y":16.0},"audioFalloff":"Linear","reverbSendLevel":0.1}

@@ -1,0 +1,405 @@
+{
+    "version": 2,
+    "graphs": [
+        {
+            "name": "main",
+            "type": "stateMachine",
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            ".editor": {
+                "inputNode": {
+                    "position": [
+                        50,
+                        200
+                    ]
+                }
+            },
+            "startingState": "empty state",
+            "states": [
+                {
+                    "name": "empty state",
+                    "graph": "empty state",
+                    "empty": true,
+                    ".editor": {
+                        "position": [
+                            50,
+                            -50
+                        ]
+                    }
+                },
+                {
+                    "name": "idleItem",
+                    "graph": "idleItem",
+                    "looping": true,
+                    ".editor": {
+                        "position": [
+                            -250,
+                            -50
+                        ]
+                    }
+                },
+                {
+                    "name": "useItem",
+                    "graph": "useItem",
+                    ".editor": {
+                        "position": [
+                            -550,
+                            -50
+                        ]
+                    }
+                },
+                {
+                    "name": "reloadItem",
+                    "graph": "reloadItem",
+                    ".editor": {
+                        "position": [
+                            -250,
+                            150
+                        ]
+                    }
+                }
+            ],
+            "transitions": [
+                {
+                    "from": "idleItem",
+                    "to": "useItem",
+                    "event": "Use"
+                },
+                {
+                    "from": "useItem",
+                    "to": "useItem",
+                    "event": "use"
+                },
+                {
+                    "from": "useItem",
+                    "to": "idleItem",
+                    "blendTimeSec": 0.15,
+                    "conditions": [
+                        {
+                            "variable": "__state_finished",
+                            "value": true,
+                            "operation": "equal"
+                        },
+                        {
+                            "variable": "UseCooldown",
+                            "value": 0.1,
+                            "operation": "greater"
+                        },
+                        {
+                            "variable": "IsUsing",
+                            "value": false,
+                            "operation": "equal"
+                        }
+                    ]
+                },
+                {
+                    "from": "useItem",
+                    "to": "useItem",
+                    "blendTimeSec": 0.15,
+                    "conditions": [
+                        {
+                            "variable": "__state_finished",
+                            "value": true,
+                            "operation": "equal"
+                        },
+                        {
+                            "variable": "UseCooldown",
+                            "value": 0.1,
+                            "operation": "greater"
+                        },
+                        {
+                            "variable": "IsUsing",
+                            "value": true,
+                            "operation": "equal"
+                        }
+                    ]
+                },
+                {
+                    "from": "reloadItem",
+                    "to": "idleItem",
+                    "blendTimeSec": 0.15,
+                    "conditions": [
+                        {
+                            "variable": "__state_finished",
+                            "value": true,
+                            "operation": "equal"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "empty state",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "nodes": [],
+            "links": []
+        },
+        {
+            "name": "idleItem",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            ".editor": {
+                "inputNode": {
+                    "position": [
+                        400,
+                        600
+                    ]
+                },
+                "outputNode": {
+                    "position": [
+                        1250,
+                        650
+                    ]
+                }
+            },
+            "nodes": [
+                {
+                    "name": "sampleAnim",
+                    "type": "sampleAnim",
+                    ".editor": {
+                        "position": [
+                            850,
+                            600
+                        ]
+                    }
+                },
+                {
+                    "name": "Get Animation Variable",
+                    "type": "getAnimationVariable",
+                    "members": {
+                        "variable": "idleItem"
+                    },
+                    ".editor": {
+                        "position": [
+                            600,
+                            400
+                        ]
+                    }
+                }
+            ],
+            "links": [
+                [
+                    ":inputStatePhase",
+                    "sampleAnim:inputPhase"
+                ],
+                [
+                    "sampleAnim:outputPose",
+                    ":pose"
+                ],
+                [
+                    "Get Animation Variable:outputAnim",
+                    "sampleAnim:inputClip"
+                ]
+            ]
+        },
+        {
+            "name": "useItem",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            ".editor": {
+                "inputNode": {
+                    "position": [
+                        100,
+                        600
+                    ]
+                },
+                "outputNode": {
+                    "position": [
+                        1000,
+                        650
+                    ]
+                }
+            },
+            "nodes": [
+                {
+                    "name": "Get Animation Variable",
+                    "type": "getAnimationVariable",
+                    "members": {
+                        "variable": "useItem"
+                    },
+                    ".editor": {
+                        "position": [
+                            400,
+                            250
+                        ]
+                    }
+                },
+                {
+                    "name": "Sample Animation",
+                    "type": "sampleAnim",
+                    ".editor": {
+                        "position": [
+                            600,
+                            500
+                        ]
+                    }
+                }
+            ],
+            "links": [
+                [
+                    ":inputStatePhase",
+                    "Sample Animation:inputPhase"
+                ],
+                [
+                    "Get Animation Variable:outputAnim",
+                    "Sample Animation:inputClip"
+                ],
+                [
+                    "Sample Animation:outputPose",
+                    ":pose"
+                ]
+            ]
+        },
+        {
+            "name": "reloadItem",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "nodes": [
+                {
+                    "name": "reloadItem",
+                    "type": "getAnimationVariable",
+                    "members": {
+                        "variable": "reloadItem"
+                    },
+                    ".editor": {
+                        "position": [
+                            50,
+                            100
+                        ]
+                    }
+                },
+                {
+                    "name": "sampleAnim",
+                    "type": "sampleAnim",
+                    "members": {
+                        "looping": false
+                    },
+                    ".editor": {
+                        "position": [
+                            400,
+                            250
+                        ]
+                    }
+                }
+            ],
+            "links": [
+                [
+                    "reloadItem:outputAnim",
+                    "sampleAnim:inputClip"
+                ],
+                [
+                    ":inputStatePhase",
+                    "sampleAnim:inputPhase"
+                ],
+                [
+                    "sampleAnim:outputPose",
+                    ":pose"
+                ]
+            ]
+        }
+    ],
+    "variables": [
+        {
+            "type": "float",
+            "name": "UseCooldown",
+            "source": "gameplay",
+            "default": 0.2
+        },
+        {
+            "type": "float",
+            "name": "UseDuration",
+            "source": "gameplay",
+            "default": 1
+        },
+        {
+            "type": "assetId",
+            "name": "idleItem",
+            "source": "remap",
+            "default": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "4359996716012570088",
+                "targetId": "3829385675"
+            }
+        },
+        {
+            "type": "assetId",
+            "name": "useItem",
+            "source": "remap",
+            "default": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "16284627704547898489",
+                "targetId": "3829385675"
+            }
+        },
+        {
+            "type": "bool",
+            "name": "IsUsing",
+            "source": "gameplay",
+            "default": false
+        },
+        {
+            "type": "assetId",
+            "name": "reloadItem",
+            "source": "remap",
+            "default": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "9100799985825678215",
+                "targetId": "3829385675"
+            }
+        }
+    ],
+    "hierarchy": {
+        "packageOrRemoteId": "16212686674365818645",
+        "ingestionId": "4494789261054954399",
+        "targetId": "3998529611"
+    }
+}

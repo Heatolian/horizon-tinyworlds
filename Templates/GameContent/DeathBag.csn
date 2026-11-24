@@ -1,0 +1,18 @@
+CSN2
+V6
+E eb4cd4e6-8914-47f7-8a01-d86d0536276a|DeathBag
+C Tx|3|P(0.0,0.0,0.0)R(0.0,0.0,0.0)S(1.0,1.0,1.0)
+C NSt|1|{"isAttainable":false}
+C ItemContainer|-|{"role":"loot","acceptTags":[],"initialSlotCount":0.0,"initialItems":[],"ownedByCharacter":false,"accessRange":4.0,"removeWhenEmpty":true,"accessMode":"Proximity"}|$D:"@s16212686674365818645/s11627974380165579759/s4237980480"
+C Interactable|-|{"action":"search","maxDistance":4.0}|$D:"@s16212686674365818645/s14096806208355564925/s4237980480"
+EA [{"class":"horizon::NetworkableTemplateEntityAttribute","data":{"isNetworkable":true}}]
+E 6eceb8f0-f3c3-4110-8180-0352d989860a|InteractionSensor|eb4cd4e6-8914-47f7-8a01-d86d0536276a
+C Tx|3|P(0.0,0.4,0.0)R(-0.0,0.0,0.0)S(1.0,1.0,1.0)
+C CSph|5|{"collisionLayer":"Layer3","radius":1.2}
+C Phy|11|{"type":"DynamicCollider","driveMode":"Kinematic"}
+C InteractionTargetComponent|-|{"lineOfSightRequired":false,"directTouchEnabled":true}|$D:"@s1262895183612548211/s7721712903437885478/s4237980480"
+E fe27b107-fdad-4656-9699-0c8d32ac9daa|Visual|eb4cd4e6-8914-47f7-8a01-d86d0536276a
+C Tx|3|P(0.0,0.15,0.0)R(0.0,0.0,0.0)S(0.6,0.3,0.45)
+C Msh|11|{"mesh":"@s24407058055595655/s4707432788469128401/s931111888","lightingParams":{"class":"horizon::platform_api::LightingParams","data":{"diffuseGISource":"LightProbes"}}}
+C Col|2|(0.22,0.32,0.18,1.0)
+C Mtl|2|{"materials":["@s16212686674365818645/s10224080950414184633/s157013062"]}

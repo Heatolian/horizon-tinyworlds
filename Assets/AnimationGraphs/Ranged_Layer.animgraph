@@ -1,0 +1,154 @@
+{
+    "version": 2,
+    "graphs": [
+        {
+            "name": "main",
+            "type": "stateMachine",
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "startingState": "Empty State",
+            "states": [
+                {
+                    "name": "Empty State",
+                    "graph": "Empty State",
+                    "empty": true
+                },
+                {
+                    "name": "AttackRanged",
+                    "graph": "AttackRanged"
+                }
+            ],
+            "transitions": [
+                {
+                    "from": "Empty State",
+                    "to": "AttackRanged",
+                    "event": "AttackRanged",
+                    "blendTimeSec": 0.15
+                },
+                {
+                    "from": "AttackRanged",
+                    "to": "Empty State",
+                    "blendTimeSec": 0.15,
+                    "conditions": [
+                        {
+                            "variable": "__state_finished",
+                            "value": true,
+                            "operation": "equal"
+                        },
+                        {
+                            "variable": "AttackRangedCooldown",
+                            "value": 0.1,
+                            "operation": "greater"
+                        }
+                    ]
+                },
+                {
+                    "from": "AttackRanged",
+                    "to": "Empty State",
+                    "event": "StopRangedAttacking",
+                    "blendTimeSec": 0.1
+                },
+                {
+                    "from": "AttackRanged",
+                    "to": "AttackRanged",
+                    "event": "AttackRanged",
+                    "blendTimeSec": 0.15
+                }
+            ]
+        },
+        {
+            "name": "Empty State",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "nodes": [],
+            "links": []
+        },
+        {
+            "name": "AttackRanged",
+            "type": "dataflow",
+            "inputs": [
+                {
+                    "name": "inputStatePhase",
+                    "type": "float"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "pose",
+                    "type": "pose"
+                }
+            ],
+            "nodes": [
+                {
+                    "name": "U2G_rt_N_pistol_fire",
+                    "type": "getAnimationVariable",
+                    "members": {
+                        "variable": "RangedAttack"
+                    }
+                },
+                {
+                    "name": "sampleAnim",
+                    "type": "sampleAnim"
+                }
+            ],
+            "links": [
+                [
+                    "U2G_rt_N_pistol_fire:outputAnim",
+                    "sampleAnim:inputClip"
+                ],
+                [
+                    ":inputStatePhase",
+                    "sampleAnim:inputPhase"
+                ],
+                [
+                    "sampleAnim:outputPose",
+                    ":pose"
+                ]
+            ]
+        }
+    ],
+    "variables": [
+        {
+            "type": "float",
+            "name": "AttackRangedDuration",
+            "source": "gameplay",
+            "default": 1
+        },
+        {
+            "type": "float",
+            "name": "AttackRangedCooldown",
+            "source": "gameplay",
+            "default": 0
+        },
+        {
+            "type": "assetId",
+            "name": "RangedAttack",
+            "source": "remap",
+            "default": {
+                "packageOrRemoteId": "16212686674365818645",
+                "ingestionId": "18319568617950351545",
+                "targetId": "3829385675"
+            }
+        }
+    ],
+    "hierarchy": {
+        "packageOrRemoteId": "16212686674365818645",
+        "ingestionId": "10599857177153770874",
+        "targetId": "3998529611"
+    }
+}

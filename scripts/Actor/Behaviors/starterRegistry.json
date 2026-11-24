@@ -1,0 +1,237 @@
+{
+  "version": 1,
+  "brains": [
+    {
+      "id": "combat",
+      "label": "Combat",
+      "starterClass": "StarterCombatComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterCombatComponent.ts",
+      "description": "Engages the closest entity carrying a matching tag: closes to attack range, then attacks with whatever attack the actor has, whether melee, ranged, a spell or a held gun. Set maxAttackDistance to that attack\\'s reach. Without an attack component the actor only closes in. Acquires at any distance by default; set engagementRange for a dormant, wake-on-approach enemy. The target must carry a matching tag: players are auto-tagged while ActorSdkTagPlayerService is active, anything else needs an ActorSdkTagComponent. All distances are surface-to-surface.",
+      "priorityRole": "Combat",
+      "inPicker": true,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "movementController",
+        "attackController",
+        "targetTag"
+      ],
+      "conflicts": [
+        "shooter-combat"
+      ],
+      "skill": "making-actors-engage-in-combat",
+      "botCompatible": false
+    },
+    {
+      "id": "follow",
+      "label": "Follow",
+      "starterClass": "StarterFollowComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterFollowComponent.ts",
+      "description": "Follows a chosen entity, or else the closest entity carrying a matching tag, by default the nearest player, and keeps a set distance from it. Ignores tagged targets beyond the give-up range and stops following one that moves beyond it. At default priorities, combat and tasks on the same actor take priority.",
+      "priorityRole": "Social",
+      "inPicker": true,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "movementController",
+        "navmesh",
+        "targetTag"
+      ],
+      "conflicts": [],
+      "skill": "making-actors-follow",
+      "botCompatible": true
+    },
+    {
+      "id": "health-and-death",
+      "label": "Health And Death",
+      "starterClass": "StarterHealthAndDeathComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterHealthAndDeathComponent.ts",
+      "description": "Wires death and hit stagger for an actor and handles post-death cleanup. Ships on every BaseActor, so it is never picked, only renamed.",
+      "priorityRole": "1000/100 fixed (Death/Stagger)",
+      "inPicker": false,
+      "needs": [
+        "ActorSdkLogicComponent"
+      ],
+      "conflicts": [],
+      "skill": "integrating-actor-health-system",
+      "botCompatible": false
+    },
+    {
+      "id": "keep-away",
+      "label": "Keep Away",
+      "starterClass": "StarterKeepAwayComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterKeepAwayComponent.ts",
+      "description": "Keeps its distance from the closest entity carrying a matching tag, by default the nearest player, without straying beyond the home radius from where it spawned. At default priorities, combat and tasks on the same actor take priority.",
+      "priorityRole": "Social",
+      "inPicker": true,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "movementController",
+        "navmesh",
+        "targetTag"
+      ],
+      "conflicts": [],
+      "skill": "making-actors-flee",
+      "botCompatible": false
+    },
+    {
+      "id": "lead",
+      "label": "Lead",
+      "starterClass": "StarterLeadComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterLeadComponent.ts",
+      "description": "Walks to a destination and pauses for the player, or a chosen entity, to catch up if they fall behind. Set destination or destinationTag; the actor does nothing without one. At default priorities, only combat on the same actor takes priority.",
+      "priorityRole": "Task",
+      "inPicker": true,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "movementController",
+        "navmesh",
+        "targetTag"
+      ],
+      "conflicts": [],
+      "skill": "making-actors-lead",
+      "botCompatible": false
+    },
+    {
+      "id": "leash",
+      "label": "Leash",
+      "starterClass": "StarterLeashComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterLeashComponent.ts",
+      "description": "Walks the actor back to its base when it gets farther than leashRadius from it, without attacking on the way, until it is within arriveRadius again. Unlike the leash radius of Wander and Keep Away, which only limits their own walks, this pulls the actor back from any behavior, including combat. The base is baseEntity, or the spawn point when unset. Add it with a combat starter to keep a guard near its post; give that combat starter a positive engagementRange no larger than leashRadius minus arriveRadius, or the actor loops between chasing and returning.",
+      "priorityRole": "Leash",
+      "inPicker": true,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "movementController",
+        "navmesh"
+      ],
+      "conflicts": [],
+      "skill": "working-with-actor-behaviors",
+      "botCompatible": false
+    },
+    {
+      "id": "look-at",
+      "label": "Look At",
+      "starterClass": "StarterLookAtComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterLookAtComponent.ts",
+      "description": "Turns to face the closest entity carrying a matching tag, by default the nearest player, while it is within range. Pairs with Wander or Patrol: the actor stops to face a player who comes near, then carries on. At default priorities, Follow, Keep Away, tasks and combat on the same actor take priority.",
+      "priorityRole": "Attention",
+      "inPicker": true,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "bodyDirectionController",
+        "targetTag"
+      ],
+      "conflicts": [],
+      "skill": "configuring-actor-attention",
+      "botCompatible": false
+    },
+    {
+      "id": "patrol",
+      "label": "Patrol",
+      "starterClass": "StarterPatrolComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterPatrolComponent.ts",
+      "description": "Walks a route of waypoints in order and loops. Waypoints are entities tagged <routeTag>_0, <routeTag>_1, ... with an ActorSdkTagComponent; routeTag must be set, and the actor does nothing without it. Behaviors with a higher priority take over, and patrolling resumes when they finish.",
+      "priorityRole": "Ambient",
+      "inPicker": true,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "movementController",
+        "navmesh"
+      ],
+      "conflicts": [],
+      "skill": "making-actors-patrol",
+      "botCompatible": false
+    },
+    {
+      "id": "search-and-pickup",
+      "label": "Search And Pickup",
+      "starterClass": "StarterSearchAndPickupComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterSearchAndPickupComponent.ts",
+      "description": "Finds the closest entity carrying a matching tag, walks to it, and picks it up. Collects one item per run, even with Persistent on \u2014 see that option. targetTags must be set \u2014 it is empty by default, and an actor with no tags logs an error and picks nothing up.",
+      "priorityRole": "20 default (decision 9)",
+      "inPicker": true,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "movementController",
+        "pickupController",
+        "navmesh",
+        "targetTag"
+      ],
+      "conflicts": [],
+      "skill": "making-actors-search-and-pickup",
+      "botCompatible": false
+    },
+    {
+      "id": "shooter-combat",
+      "label": "Shooter Combat",
+      "starterClass": "StarterShooterCombatComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterShooterCombatComponent.ts",
+      "description": "Fights like a shooter-game bot with the gun it holds: spots the player within sight range and line of sight, strafes at a preferred distance while firing, takes cover to reload, retreats when badly hurt, and searches where it last saw its target. Needs a gun in hand (a gun item in its ItemSystem loadout, e.g. rifle plus ammo_556*90); without one it maneuvers but never fires. Targets must carry a matching tag; players are auto-tagged \"player\". Use instead of Starter Combat Component, not together with it: both drive movement and attacks at the same default priority.",
+      "priorityRole": "Combat",
+      "inPicker": true,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "movementController",
+        "attackController",
+        "heldWeapon",
+        "targetTag"
+      ],
+      "conflicts": [
+        "combat"
+      ],
+      "skill": "making-actors-engage-in-combat",
+      "botCompatible": true
+    },
+    {
+      "id": "simple-fetch",
+      "label": "Simple Fetch",
+      "starterClass": "StarterSimpleFetchComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterSimpleFetchComponent.ts",
+      "description": "Walks to an item, picks it up, and carries it to a drop-off point. Set Entity to fetch or Fetch tag (entity wins); with both empty the NPC idles.",
+      "priorityRole": "20 default (decision 9)",
+      "inPicker": true,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "movementController",
+        "pickupController",
+        "targetTag"
+      ],
+      "conflicts": [],
+      "skill": "making-actors-fetch",
+      "botCompatible": false
+    },
+    {
+      "id": "use-item",
+      "label": "Use Item",
+      "starterClass": "StarterUseItemComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterUseItemComponent.ts",
+      "description": "",
+      "priorityRole": "30 hard-coded (decision 9)",
+      "inPicker": false,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "movementController",
+        "pickupController"
+      ],
+      "conflicts": [],
+      "skill": "making-actors-use-items",
+      "botCompatible": false
+    },
+    {
+      "id": "wander",
+      "label": "Wander",
+      "starterClass": "StarterWanderComponent",
+      "path": "scripts/Actor/Behaviors/Starters/StarterWanderComponent.ts",
+      "description": "Wanders around where it starts: pauses, strolls to a random nearby point, and pauses again, staying within the leash radius of its starting point. Behaviors with a higher priority take over, and wandering resumes when they finish.",
+      "priorityRole": "Ambient",
+      "inPicker": true,
+      "needs": [
+        "ActorSdkLogicComponent",
+        "movementController",
+        "navmesh"
+      ],
+      "conflicts": [],
+      "skill": "making-actors-wander-idly",
+      "botCompatible": true
+    }
+  ]
+}
